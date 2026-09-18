@@ -32,12 +32,16 @@ Each approach uses a 4-bit digital traffic input.
 ### Traffic Control
 
 North-South and East-West traffic are controlled as two main phases.
+The total demand for each phase is calculated as:
 
-| Demand | GREEN Duration |
-| ------ | -------------: |
-| Low    |           10 s |
-| Medium |           15 s |
-| High   |           20 s |
+- N-S demand = `traffic_n_count + traffic_s_count`
+- E-W demand = `traffic_e_count + traffic_w_count`
+
+| Total Demand | GREEN Duration |
+| -------------| -------------: |
+| 0-1          |           10 s |
+| 2-3          |           15 s |
+| 4-8          |           20 s |
 
 ### Priority
 
