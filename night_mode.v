@@ -5,7 +5,7 @@ module night_mode(
     input wire one_sec_tick,
     output reg yellow_blink
 );
-    always @(posedge clk)
+	always @(posedge clk or posedge rst)
     begin
         if(rst)
 	      begin
