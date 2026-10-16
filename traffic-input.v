@@ -19,10 +19,25 @@ traffic_e_count <= 3'd0;
 traffic_w_count <= 3'd0; 
 end
 else begin
-traffic_n_count<= traffic_n_in[0]+traffic_n_in[1]+traffic_n_in[2]+traffic_n_in[3];
-traffic_s_count<= traffic_s_in[0]+traffic_s_in[1]+traffic_s_in[2]+traffic_s_in[3];
-traffic_e_count<= traffic_e_in[0]+traffic_e_in[1]+traffic_e_in[2]+traffic_e_in[3];
-traffic_w_count<= traffic_w_in[0]+traffic_w_in[1]+traffic_w_in[2]+traffic_w_in[3];
+    traffic_n_count <= {2'b00, traffic_n_in[0]}
+                     + {2'b00, traffic_n_in[1]}
+                     + {2'b00, traffic_n_in[2]}
+                     + {2'b00, traffic_n_in[3]};
+
+    traffic_s_count <= {2'b00, traffic_s_in[0]}
+                     + {2'b00, traffic_s_in[1]}
+                     + {2'b00, traffic_s_in[2]}
+                     + {2'b00, traffic_s_in[3]};
+
+    traffic_e_count <= {2'b00, traffic_e_in[0]}
+                     + {2'b00, traffic_e_in[1]}
+                     + {2'b00, traffic_e_in[2]}
+                     + {2'b00, traffic_e_in[3]};
+
+    traffic_w_count <= {2'b00, traffic_w_in[0]}
+                     + {2'b00, traffic_w_in[1]}
+                     + {2'b00, traffic_w_in[2]}
+                     + {2'b00, traffic_w_in[3]};
 end
 end
 endmodule
