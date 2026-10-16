@@ -9,8 +9,8 @@ module adaptive_controller(input wire[2:0]traffic_n_count ,input wire[2:0]traffi
   always @(*) begin
 
     // calculate total traffic demand 
-    ns_demand = traffic_n_count + traffic_s_count;
-    ew_demand = traffic_e_count + traffic_w_count;
+    ns_demand = {1'b0, traffic_n_count } + {1'b0,traffic_s_count};
+    ew_demand = {1'b0 ,traffic_e_count} +{1'b0 ,traffic_w_count};
     
     // giving green time on the basis traffic density 
 
